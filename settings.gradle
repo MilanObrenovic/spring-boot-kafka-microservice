@@ -1,3 +1,2 @@
 rootProject.name = "spring-boot-kafka-microservice"
-
 include "kafka-producer-wikimedia-service"
