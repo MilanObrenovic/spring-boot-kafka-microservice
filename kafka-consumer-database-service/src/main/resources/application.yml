@@ -1,3 +1,6 @@
+server:
+  port: 8082
+
 spring:
   kafka:
     consumer:
@@ -19,18 +22,18 @@ spring:
     password: root
     driverClassName: org.postgresql.Driver
 
-    jpa:
-      hibernate:
-        ddlAuto: create-drop
-      showSql: false
+  jpa:
+    hibernate:
+      ddlAuto: create
+    showSql: false
 
-      # Performance optimization purposes, makes SQL execute faster
-      databasePlatform: org.hibernate.dialect.PostgreSQLDialect
+    # Performance optimization purposes, makes SQL execute faster
+    databasePlatform: org.hibernate.dialect.PostgreSQLDialect
 
-      # This must be set to `true` so `data.sql` can be run
-      deferDatasourceInitialization: false
+    # This must be set to `true` so `data.sql` can be run
+    deferDatasourceInitialization: false
 
-    sql:
-      init:
-        mode: always
-        platform: postgres
+  sql:
+    init:
+      mode: always
+      platform: postgres
