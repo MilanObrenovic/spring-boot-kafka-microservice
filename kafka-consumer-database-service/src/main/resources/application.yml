@@ -12,3 +12,25 @@ spring:
 
     groupId:
       demo: "demo-group"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wikimedia_db
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+
+    jpa:
+      hibernate:
+        ddlAuto: create-drop
+      showSql: false
+
+      # Performance optimization purposes, makes SQL execute faster
+      databasePlatform: org.hibernate.dialect.PostgreSQLDialect
+
+      # This must be set to `true` so `data.sql` can be run
+      deferDatasourceInitialization: false
+
+    sql:
+      init:
+        mode: always
+        platform: postgres
