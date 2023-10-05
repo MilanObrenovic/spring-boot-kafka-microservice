@@ -4,6 +4,6 @@ import com.launchdarkly.eventsource.StreamException;
 
 public interface WikimediaChangesProducerService {
 
-    void sendMessage(String message) throws InterruptedException, StreamException;
+    void sendMessage() throws InterruptedException, StreamException;
 
 }

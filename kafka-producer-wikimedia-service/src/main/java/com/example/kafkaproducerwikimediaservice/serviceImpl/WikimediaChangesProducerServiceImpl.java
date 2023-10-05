@@ -26,7 +26,7 @@ public class WikimediaChangesProducerServiceImpl implements WikimediaChangesProd
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
-    public void sendMessage(String message) throws InterruptedException, StreamException {
+    public void sendMessage() throws InterruptedException, StreamException {
         BackgroundEventHandler backgroundEventHandler = new WikimediaChangesHandler(
                 kafkaTemplate,
                 wikimediaRecentChangeTopic
@@ -43,8 +43,8 @@ public class WikimediaChangesProducerServiceImpl implements WikimediaChangesProd
                 eventSourceBuilder
         );
 
-        EventSource eventSource = backgroundeventSourceBuilder.build().getEventSource();
-        eventSource.start();
+        BackgroundEventSource backgroundEventSource = backgroundeventSourceBuilder.build();
+        backgroundEventSource.start();
 
         TimeUnit.MINUTES.sleep(10);
     }
