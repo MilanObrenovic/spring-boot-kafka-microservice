@@ -5,12 +5,10 @@ spring:
       groupId: ${spring.kafka.groupId.demo}
       autoOffsetReset: earliest
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
-      valueDeserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: "*"
+      valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    topicName:
+      wikimediaRecentChange: "wikimedia-recent-change-topic"
 
     groupId:
       demo: "demo-group"

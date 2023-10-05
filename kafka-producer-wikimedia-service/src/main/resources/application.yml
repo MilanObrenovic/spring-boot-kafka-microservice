@@ -1,9 +1,9 @@
 spring:
   kafka:
-    consumer:
+    producer:
       bootstrapServers: localhost:9092
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
-      valueDeserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      valueDeserializer: org.apache.kafka.common.serialization.StringDeserializer
 
     topicName:
       wikimediaRecentChange: "wikimedia-recent-change-topic"
