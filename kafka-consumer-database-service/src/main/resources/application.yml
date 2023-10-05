@@ -24,7 +24,7 @@ spring:
 
   jpa:
     hibernate:
-      ddlAuto: create
+      ddlAuto: create-drop
     showSql: false
 
     # Performance optimization purposes, makes SQL execute faster
